@@ -16,8 +16,7 @@ module.exports =  function (source) {
 
     validateOptions(schema, options, 'Example Loader');
 
-    let result = JSON.parse(source)
 
-    // return `export default ${JSON.stringify(source)}`;
-    return result
+    return `export default ${JSON.stringify(source)}`;
+    // return result
 }

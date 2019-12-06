@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 //清除dist
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const helloWorldPlugin = require('./src/HelloWordPlugin')
 module.exports = {
     entry: {
         app: './src/index.js',
@@ -14,6 +15,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        new helloWorldPlugin({options:true}),
         new HtmlWebpackPlugin({
             title: '缓存',
             template: "./index.html"
