@@ -5,16 +5,31 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "rm -rf dist && webpack --config webpack.config.product.js",
+    "start": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "loader-utils": "^1.2.3",
     "lodash": "^4.17.15",
+    "sass-loader": "^8.0.0",
+    "schema-utils": "^2.6.1",
+    "stylus-loader": "^3.0.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
-    "html-webpack-plugin": "^3.2.0"
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.1",
+    "dart-sass": "^1.23.7",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "style-loader": "^1.0.1",
+    "stylus": "^0.54.7",
+    "webpack-dev-server": "^3.9.0"
   }
 }

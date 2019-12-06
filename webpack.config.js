@@ -1,11 +1,26 @@
+const base = require('./webpack.config.base.js')
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+console.log(base);
 module.exports = {
     mode:'development',
-    entry:'./src/index.js',
-    output:{
-        filename:'main.js',
-        path:path.resolve(__dirname,'dist')
+    ...base,
+    devServer:{
+        contentBase:path.join(__dirname,'dist'),
+        port:9000,
     },
-    plugins:[new HtmlWebpackPlugin()]
+    plugins:[
+        ...base.plugins
+    ],
+    module:{
+        rules:[
+            ...base.module.rules,
+            {
+                test: /\.css$/,
+                use: [
+                    "style-loader","css-loader"
+                ],
+            },
+        ]
+    }
 }
