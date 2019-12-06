@@ -15,7 +15,9 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new helloWorldPlugin({options:true}),
+        new helloWorldPlugin({
+            state:'hahah',
+        }),
         new HtmlWebpackPlugin({
             title: '缓存',
             template: "./index.html"

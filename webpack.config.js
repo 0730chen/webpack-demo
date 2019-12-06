@@ -1,7 +1,8 @@
 const base = require('./webpack.config.base.js')
 const path = require('path')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-console.log(base);
+const FileListPlugin = require('./src/FileListPlugin')
+console.log(FileListPlugin);
 module.exports = {
     mode:'development',
     ...base,
@@ -10,7 +11,8 @@ module.exports = {
         port:9000,
     },
     plugins:[
-        ...base.plugins
+        ...base.plugins,
+        new FileListPlugin()
     ],
     module:{
         rules:[
