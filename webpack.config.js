@@ -1,8 +1,7 @@
 const base = require('./webpack.config.base.js')
 const path = require('path')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const FileListPlugin = require('./src/FileListPlugin')
-console.log(FileListPlugin);
 module.exports = {
     mode:'development',
     ...base,
@@ -13,6 +12,7 @@ module.exports = {
     plugins:[
         ...base.plugins,
         new FileListPlugin()
+
     ],
     module:{
         rules:[
@@ -23,6 +23,12 @@ module.exports = {
                     "style-loader","css-loader"
                 ],
             },
+            {
+                test:/\.md$/i,
+                use:{
+                    loader:path.resolve(__dirname,'./src/markdownLoader.js')
+                }
+            }
         ]
     }
 }

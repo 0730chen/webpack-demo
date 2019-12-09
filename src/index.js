@@ -5,9 +5,8 @@ import './style.scss'
 import './style.less'
 import './style.styl'
 import shit from './main.shit'
-
-console.log(typeof shit,shit);
-
+import './hello.md'
+import './第二个.md'
 function component() {
     const element = document.createElement('div');
     // Lodash, currently included via a script, is required for this line to work

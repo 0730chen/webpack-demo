@@ -1,6 +1,7 @@
-console.log('解析shit')
+
 const {getOptions} = require('loader-utils');
 const validateOptions = require('schema-utils');
+const fs = require('fs')
 
 const schema = {
     type: 'object',

@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const helloWorldPlugin = require('./src/HelloWordPlugin')
+const FileListPlugin = require('./src/FileListPlugin')
+
 module.exports = {
     entry: {
         app: './src/index.js',
@@ -15,9 +17,6 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new helloWorldPlugin({
-            state:'hahah',
-        }),
         new HtmlWebpackPlugin({
             title: '缓存',
             template: "./index.html"
@@ -26,33 +25,33 @@ module.exports = {
     module: {
         rules: [
             {
-              test:/\.shit$/i,
-              use:[
-                  {
-                      loader: path.resolve('./src/shit.js'),
-                      options: {}
-                  }
-              ]
+                test: /\.shit$/i,
+                use: [
+                    {
+                        loader: path.resolve('./src/shit.js'),
+                        options: {}
+                    }
+                ]
             },
             {
                 test: /\.scss$/,
                 use: [
-                    "style-loader","css-loader",{
-                    loader:"sass-loader",
+                    "style-loader", "css-loader", {
+                        loader: "sass-loader",
                         //node-sass非常难装，所以使用dart-sass
-                        options:{
-                        implementation:require("dart-sass")
+                        options: {
+                            implementation: require("dart-sass")
                         }
                     }
                 ],
             },
             {
-              test:/\.styl$/i,
-              loader:["style-loader","css-loader","stylus-loader"]
+                test: /\.styl$/i,
+                loader: ["style-loader", "css-loader", "stylus-loader"]
             },
             {
-                test:/\.less$/i,
-                loader:["style-loader","css-loader","less-loader"]
+                test: /\.less$/i,
+                loader: ["style-loader", "css-loader", "less-loader"]
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
