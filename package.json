@@ -14,7 +14,7 @@
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "loader-utils": "^1.2.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "sass-loader": "^8.0.0",
     "schema-utils": "^2.6.1",
     "stylus-loader": "^3.0.2",
